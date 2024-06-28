@@ -2,7 +2,7 @@
   "name": "@movie-magic/movie-magic-rest-api",
   "description": "Movie Magic Rest API",
   "version": "0.0.1",
-  "main": "dist/index.js",
+  "main": "index.js",
   "sideEffects": false,
   "files": [
     "dist/**"
