@@ -11,12 +11,12 @@
     "build": "rimraf dist && tsc",
     "clean": "rimraf node_modules dist",
     "dev": "nodemon --watch src -e ts --exec ts-node src/index.ts",
+    "fix": "run-s _lint:fix _format:fix",
     "lint": "run-s _lint _format",
-    "lint:fix": "run-s _lint:fix _format:fix",
     "start": "node dist",
-    "_format": "prettier --list-different README.md '**/*.{js,ts,json,md}'",
+    "_format": "prettier --list-different '*.{js,ts,json,md}' 'src/**/*.{css,js,jsx,ts,tsx,json,md}'",
     "_format:fix": "npm run _format -- --write",
-    "_lint": "eslint '**/*.{js,ts}'",
+    "_lint": "eslint '**/*.{js,jsx,ts,tsx}'",
     "_lint:fix": "npm run _lint -- --fix"
   },
   "dependencies": {
@@ -30,19 +30,20 @@
     "@code-shaper/eslint-config": "^1.*",
     "@code-shaper/jest-config": "^1.*",
     "@code-shaper/typescript-config": "^1.*",
+    "@dword-design/eslint-plugin-import-alias": "^5.0.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/morgan": "^1.9.9",
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.11",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "eslint": "^8.57.0",
     "nodemon": "^3.1.4",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.7",
-    "ts-jest": "^29.1.5",
+    "prettier": "3.3.3",
+    "rimraf": "6.0.1",
+    "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.4"
   }
 }
